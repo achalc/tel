@@ -69,6 +69,6 @@ class SuggestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def suggestion_params
-      params.require(:suggestion).permit(:user_id, :category_id, :name, :description, :liked, :location)
+      params.require(:suggestion).permit(:user_id, :name, :description, :experience_type, :category, :location, :photo)
     end
 end

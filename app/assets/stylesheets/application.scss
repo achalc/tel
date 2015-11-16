@@ -1,3 +1,46 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
+
+body {
+	background-color: #955aa4;
+}
+
+.login {
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Aleo-LightItalic;
+	color: White;
+}
+
+@font-face {
+    font-family: Aleo-Bold;
+    src: url(../fonts/Aleo-Bold.otf);
+}
+
+@font-face {
+    font-family: Aleo-Regular;
+    src: url(../fonts/Aleo-Regular.otf);
+}
+
+@font-face {
+    font-family: Aleo-LightItalic;
+    src: url(../fonts/Aleo-LightItalic.otf);
+}
+
+@font-face {
+    font-family: Aleo-BoldItalic;
+    src: url(../fonts/Aleo-BoldItalic.otf);
+}
+
+@font-face {
+    font-family: Aleo-Italic;
+    src: url(../fonts/Aleo-Italic.otf);
+}
+
+@font-face {
+    font-family: Aleo-Light;
+    src: url(../fonts/Aleo-Light.otf);
+}
