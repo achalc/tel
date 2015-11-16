@@ -11,7 +11,12 @@
 		<%= image_tag("motto.png", :class => "responsive-img")%>
 
 		<br><br><br><br>
-		<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false">FACEBOOK LOGIN BUTTON</div>
+		<% if current_user %>
+			Welcome <strong><%= current_user.name %></strong>!
+    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
+		<% else %>
+			<%= button_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+		<% end %>
   	</div>
 
   	<div class="col s3"></div>

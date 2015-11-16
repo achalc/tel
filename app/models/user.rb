@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 	has_many :suggestions
 	has_many :favorites
 
-	validates_presence_of :first_name, :last_name, :email, :password_digest
 	# validates_presence_of :first_name, :last_name, :email, :password_digest
 
 	def self.from_omniauth(auth)

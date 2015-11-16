@@ -40,16 +40,12 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-<<<<<<< HEAD
-    byebug (8.0.0)
+    byebug (8.2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-=======
-    byebug (8.2.0)
->>>>>>> facebook
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -145,7 +141,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    spring (1.4.1)
+    spring (1.4.2)
     sprockets (3.4.0)
       rack (> 1, < 3)
     sprockets-rails (2.3.3)
