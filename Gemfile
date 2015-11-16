@@ -25,12 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'materialize-sass'
 
-<<<<<<< HEAD
-=======
 gem 'faker'
 
 gem 'populator'
->>>>>>> 0afc804cd7f5c5931aa1e84d0393f408b3012a26
+#>>>>>>> 0afc804cd7f5c5931aa1e84d0393f408b3012a26
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
