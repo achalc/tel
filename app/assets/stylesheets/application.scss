@@ -12,6 +12,7 @@ $primary-color: color("blue", "lighten-2") !default;
 	boarder-top:1px solid #ddd;
 	border-bottom: 0;
 	background-color: #FFFFFF;
+	line-height: 20px;
 }
 
 .bottom_nav .nav-item {
@@ -35,16 +36,16 @@ $primary-color: color("blue", "lighten-2") !default;
 
 .bottom_nav .nav-item .icon {
 	top: 3px;
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 	padding-top: 0;
 	padding-bottom: 0;	
 }
 
 .bottom_nav .nav-item_tel .icon {
 	top: 3px;
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 	padding-top: 0;
 	padding-bottom: 0;	
 }
