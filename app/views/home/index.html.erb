@@ -24,3 +24,27 @@
 		</a>
 	</nav>
 </body>
+=======
+<div class="container homeContainer">
+	<!-- Page Content goes here -->
+	<br>
+	<br>
+	<br>
+	<div class="col s3"></div>
+
+ 	<div class="col s6 login">
+ 		<%= image_tag("logo.png", :class => "responsive-img logo")%>
+		<br><br>
+		<%= image_tag("motto.png", :class => "responsive-img")%>
+
+		<br><br><br><br>
+		<% if current_user %>
+			Welcome <strong><%= current_user.name %></strong>!
+    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
+		<% end %>
+  	</div>
+
+  	<div class="col s3"></div>
+</div>
+
+>>>>>>> dc25c7a9ae3feb2ba79ba2aa43e858c5db6ddcd6

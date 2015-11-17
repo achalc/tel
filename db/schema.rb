@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114231259) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20151116231305) do
+=======
+ActiveRecord::Schema.define(version: 20151116210842) do
+>>>>>>> facebook
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "favorites", force: :cascade do |t|
+    t.string   "user_id"
+    t.string   "suggestion_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "friends", force: :cascade do |t|
@@ -34,23 +39,17 @@ ActiveRecord::Schema.define(version: 20151114231259) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string   "suggestion_id"
-    t.string   "filename"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "suggestions", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "category_id"
     t.string   "name"
     t.text     "description"
-    t.boolean  "liked"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.boolean  "favorite"
+    t.string   "photo"
+    t.string   "category"
+    t.string   "experience_type"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,8 +57,17 @@ ActiveRecord::Schema.define(version: 20151114231259) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.string   "name"
+    t.datetime "oauth_expires_at"
+<<<<<<< HEAD
+    t.string   "photo"
+=======
+>>>>>>> facebook
   end
 
 end

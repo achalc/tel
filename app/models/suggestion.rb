@@ -1,9 +1,18 @@
 class Suggestion < ActiveRecord::Base
+	mount_uploader :photo, PhotoUploader
+
+	# relationships
 	belongs_to :user
-	belongs_to :category
-	has_many :photos
 	has_many :notifications
 
-	validates_presence_of :name, :description, :liked
+	# validations
+	validates_presence_of :name, :description
+	experience_types = ['positive', 'okay', 'negative']
+	validates :experience_type, presence: true, inclusion: { in: experience_types }
+	CATEGORIES_LIST = [['Restaurant', 'restaurant'],['Bar', 'bar'], ['Attraction', 'attraction'], ['Event/Festival', 'event/festival'], ['Nightlife', 'nightlife'], ['Shopping', 'shopping'], ['Museum', 'museum'], ['Other', 'other']]
+	validates :category, presence: true, inclusion: { in: CATEGORIES_LIST.map{|a,b| b}, message: "is not a valid category"}
+
+	# scopes
+	scope :created_at, -> { order('suggestions.created_at DESC') }
 
 end
