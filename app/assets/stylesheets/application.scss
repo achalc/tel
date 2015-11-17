@@ -2,6 +2,78 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
+.bottom_nav {
+	bottom: 0;
+	display: table;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	table-layout: fixed;
+	boarder-top:1px solid #ddd;
+	border-bottom: 0;
+	background-color: #FFFFFF;
+	line-height: 20px;
+}
+
+.bottom_nav .nav-item {
+	display: table-cell;
+	width: 1%;
+	height: 40px;
+	color: #929292;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.bottom_nav .nav-item_tel {
+	display: table-cell;
+	width: 1%;
+	height: 50px;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #955aa4;
+}
+
+.bottom_nav .nav-item_tel.active, .bottom_nav .nav-item_tel:active {
+	display: table-cell;
+	width: 1%;
+	height: 50px;
+	color: #955aa4;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #c6a6ce;
+	font-weight: bold;
+}
+
+.bottom_nav .nav-item.active, .bottom_nav .nav-item:active{
+	color: #955aa4;
+	font-weight: bold;
+}
+
+.bottom_nav .nav-item .icon {
+	top: 3px;
+	width: 30px;
+	height: 30px;
+	padding-top: 0;
+	padding-bottom: 0;	
+}
+
+.bottom_nav .nav-item_tel .icon {
+	top: 3px;
+	width: 40px;
+	height: 40px;
+	padding-top: 5;
+	padding-bottom: 0;	
+}
+
+.bottom_nav .nav-item .item-label {
+	display: block;
+}
+
+.bottom_nav .nav-item_tel .item-label {
+	display: block;
+}
+
 body {
 	background-color: #955aa4;
 }
