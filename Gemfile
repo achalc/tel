@@ -32,7 +32,6 @@ gem 'materialize-sass'
 gem 'faker'
 
 gem 'populator'
-#>>>>>>> 0afc804cd7f5c5931aa1e84d0393f408b3012a26
 
 # Use carrierwave to upload instructor photos
 gem 'carrierwave'
