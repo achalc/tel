@@ -2,36 +2,61 @@
 
 <h1>Listing Suggestions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Category</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Liked</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @suggestions.each do |suggestion| %>
+<body>
+  <table>
+    <thead>
       <tr>
-        <td><%= suggestion.user_id %></td>
-        <td><%= suggestion.category_id %></td>
-        <td><%= suggestion.name %></td>
-        <td><%= suggestion.description %></td>
-        <td><%= suggestion.liked %></td>
-        <td><%= suggestion.location %></td>
-        <td><%= link_to 'Show', suggestion %></td>
-        <td><%= link_to 'Edit', edit_suggestion_path(suggestion) %></td>
-        <td><%= link_to 'Destroy', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Liked</th>
+        <th>Location</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @suggestions.each do |suggestion| %>
+        <tr>
+          <td><%= suggestion.user_id %></td>
+          <td><%= suggestion.category_id %></td>
+          <td><%= suggestion.name %></td>
+          <td><%= suggestion.description %></td>
+          <td><%= suggestion.liked %></td>
+          <td><%= suggestion.location %></td>
+          <td><%= link_to 'Show', suggestion %></td>
+          <td><%= link_to 'Edit', edit_suggestion_path(suggestion) %></td>
+          <td><%= link_to 'Destroy', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
 
 <br>
 
 <%= link_to 'New Suggestion', new_suggestion_path %>
+
+<nav class="bottom_nav">
+    <a class="nav-item" href="#">
+      <%= image_tag 'newsGray.png', class: "icon" %>
+      <span class="item-label">Suggestion Feed</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'starGray.png', class: "icon" %>
+      <span class="item-label">Favorites</span>
+    </a>
+    <a class="nav-item_tel" href="#">
+      <%= image_tag 'post.png', class: "icon" %>
+      <span class="item-label">tel a Friend</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'bellGray.png', class: "icon" %>
+      <span class="item-label">Notification</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'profileGray.png', class: "icon" %>
+      <span class="item-label">Profile</span>
+    </a>
+</nav>

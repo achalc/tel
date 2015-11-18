@@ -1,27 +1,21 @@
 <h1>tel</h1>
 
 <body>
-<div class="container homeContainer">
-	<!-- Page Content goes here -->
-	<br>
-	<br>
-	<br>
-	<div class="col s3"></div>
+		<div class="col s3"></div>
 
- 	<div class="col s6 login">
- 		<%= image_tag("logo.png", :class => "responsive-img logo")%>
-		<br><br>
-		<%= image_tag("motto.png", :class => "responsive-img")%>
+	 	<div class="col s6 login">
+	 		<%= image_tag("logo.png", :class => "responsive-img logo")%>
+			<br><br>
+			<%= image_tag("motto.png", :class => "responsive-img")%>
 
-		<br><br><br><br>
-		<% if current_user %>
-			Welcome <strong><%= current_user.name %></strong>!
-    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
-		<% end %>
-  	</div>
+			<br><br><br><br>
+			<% if current_user %>
+				Welcome <strong><%= current_user.name %></strong>!
+	    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
+			<% end %>
+	  	</div>
 
-  	<div class="col s3"></div>
-</div>
+	  	<div class="col s3"></div>
 </body>
 
 <nav class="bottom_nav">
