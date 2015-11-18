@@ -13,9 +13,9 @@
 		<br><br><br><br>
 		<% if current_user %>
 			Welcome <strong><%= current_user.name %></strong>!
-    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
+    		<%= link_to "Sign out", signout_path, :class => "waves-effect waves-light btn fbauth" %>
 		<% else %>
-			<%= button_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+			<%= link_to "Sign in with Facebook", "/auth/facebook", :class => "waves-effect waves-light btn fbauth" %>
 		<% end %>
   	</div>
 

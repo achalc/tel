@@ -35,12 +35,12 @@
  	<div class="col s6 login">
  		<%= image_tag("logo.png", :class => "responsive-img logo")%>
 		<br><br>
-		<%= image_tag("motto.png", :class => "responsive-img")%>
+		<%= image_tag("motto.png", :class => "responsive-img motto")%>
 
 		<br><br><br><br>
 		<% if current_user %>
 			Welcome <strong><%= current_user.name %></strong>!
-    		<%= button_to "Sign out", signout_path, id: "sign_out" %>
+    		<%= link_to "Sign out", signout_path, :class => "waves-effect waves-light btn fbauth" %>
 		<% end %>
   	</div>
 
