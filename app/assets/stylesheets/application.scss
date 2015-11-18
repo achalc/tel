@@ -3,12 +3,14 @@ $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
 .body {
+	overflow: auto;
+	position: relative;
 	min-height: 100%;
 	margin-bottom: -50px;	
 }
 
 .bottom_nav {
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	display: table;
 	width: 100%;
