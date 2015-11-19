@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151116231305) do
-=======
-ActiveRecord::Schema.define(version: 20151116210842) do
->>>>>>> facebook
 
   create_table "favorites", force: :cascade do |t|
     t.string   "user_id"
@@ -59,15 +55,12 @@ ActiveRecord::Schema.define(version: 20151116210842) do
     t.string   "password_digest"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "photo"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "name"
     t.datetime "oauth_expires_at"
-<<<<<<< HEAD
-    t.string   "photo"
-=======
->>>>>>> facebook
   end
 
 end

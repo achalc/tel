@@ -2,30 +2,55 @@
 
 <h1>Listing Notifications</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Suggestion</th>
-      <th>User</th>
-      <th>Seen</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notifications.each do |notification| %>
+<body>
+  <table>
+    <thead>
       <tr>
-        <td><%= notification.suggestion_id %></td>
-        <td><%= notification.user_id %></td>
-        <td><%= notification.seen %></td>
-        <td><%= link_to 'Show', notification %></td>
-        <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
-        <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Suggestion</th>
+        <th>User</th>
+        <th>Seen</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @notifications.each do |notification| %>
+        <tr>
+          <td><%= notification.suggestion_id %></td>
+          <td><%= notification.user_id %></td>
+          <td><%= notification.seen %></td>
+          <td><%= link_to 'Show', notification %></td>
+          <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
+          <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
 
 <br>
 
 <%= link_to 'New Notification', new_notification_path %>
+
+<nav class="bottom_nav">
+    <a class="nav-item" href="#">
+      <%= image_tag 'newsGray.png', class: "icon" %>
+      <span class="item-label">Suggestion Feed</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'starGray.png', class: "icon" %>
+      <span class="item-label">Favorites</span>
+    </a>
+    <a class="nav-item_tel" href="#">
+      <%= image_tag 'post.png', class: "icon" %>
+      <span class="item-label">tel a Friend</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'bellGray.png', class: "icon" %>
+      <span class="item-label">Notification</span>
+    </a>
+    <a class="nav-item" href="#">
+      <%= image_tag 'profileGray.png', class: "icon" %>
+      <span class="item-label">Profile</span>
+    </a>
+</nav>
