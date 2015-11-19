@@ -82,8 +82,16 @@ $primary-color: color("blue", "lighten-2") !default;
 	display: block;
 }
 
-body {
+.item-label {
+	font-size: 7pt;
+}
+
+body.login{
 	background-color: #955aa4;
+}
+
+body.reg {
+	background-color: White;
 }
 
 .fbauth {

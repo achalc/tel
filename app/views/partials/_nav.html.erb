@@ -1,0 +1,22 @@
+<nav class="bottom_nav">
+	<%= link_to index_path, :class => "nav-item" do %>
+		<%= image_tag 'newsGray.png', class: "icon" %>
+		<span class="item-label">Suggestion Feed</span>
+	<% end %>
+	<%= link_to favorites_path, :class => "nav-item" do %>
+		<%= image_tag 'starGray.png', class: "icon" %>
+		<span class="item-label">Favorites</span>
+	<% end %>
+	<%= link_to new_suggestion_path, :class => "nav-item_tel" do %>
+		<%= image_tag 'post.png', class: "icon" %>
+		<span class="item-label">tel a Friend</span>
+	<% end %>
+	<%= link_to notifications_path, :class => "nav-item" do %>
+		<%= image_tag 'bellGray.png', class: "icon" %>
+		<span class="item-label">Notification</span>
+	<% end %>
+	<%= link_to index_path, :class => "nav-item" do %>
+		<%= image_tag 'profileGray.png', class: "icon" %>
+		<span class="item-label">Profile</span>
+	<% end %>
+</nav>

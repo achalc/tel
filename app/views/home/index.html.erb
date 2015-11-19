@@ -1,49 +1,11 @@
-<body>
-	<div class="container homeContainer">
-		<!-- Page Content goes here -->
-		<br>
-		<br>
-		<br>
-		<div class="col s3"></div>
+<% content_for :body_class, 'reg' %>
 
-	 	<div class="col s6 login">
-	 		<%= image_tag("logo.png", :class => "responsive-img logo")%>
-			<br><br>
-			<%= image_tag("motto.png", :class => "responsive-img motto")%>
+<div class="container homeContainer">
+	<!-- Page Content goes here -->
+	
 
-			<br><br><br><br>
-			<% if current_user %>
-				Welcome <strong><%= current_user.name %></strong>!
-	    		<%= link_to "Sign out", signout_path, :class => "waves-effect waves-light btn fbauth" %>
-			<% end %>
-	  	</div>
-
-	  	<div class="col s3"></div>
-	</div>
-</body>
-
-<nav class="bottom_nav">
-	<a class="nav-item" href="#">
-		<%= image_tag 'newsGray.png', class: "icon" %>
-		<span class="item-label">Suggestion Feed</span>
-	</a>
-	<a class="nav-item" href="#">
-		<%= image_tag 'starGray.png', class: "icon" %>
-		<span class="item-label">Favorites</span>
-	</a>
-	<a class="nav-item_tel" href="#">
-		<%= image_tag 'post.png', class: "icon" %>
-		<span class="item-label">tel a Friend</span>
-	</a>
-	<a class="nav-item" href="#">
-		<%= image_tag 'bellGray.png', class: "icon" %>
-		<span class="item-label">Notification</span>
-	</a>
-	<a class="nav-item" href="#">
-		<%= image_tag 'profileGray.png', class: "icon" %>
-		<span class="item-label">Profile</span>
-	</a>
-</nav>
+  	<div class="col s3"></div>
+</div>
 
 
 
