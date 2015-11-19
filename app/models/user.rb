@@ -7,11 +7,6 @@ class User < ActiveRecord::Base
 	has_many :suggestions
 	has_many :favorites
 
-	# instance methods
-    def name
-    	last_name + ", " + first_name
-  	end
-
   	# scopes 
   	scope :alphabetical, -> {order('name') }
 
