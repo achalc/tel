@@ -36,6 +36,8 @@ gem 'populator'
 # Use carrierwave to upload instructor photos
 gem 'carrierwave'
 
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

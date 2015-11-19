@@ -6,5 +6,6 @@ class HomeController < ApplicationController
 
 	def login 
 		@disable_nav = true
+		@disable_header = true
 	end
 end

@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
@@ -24,10 +25,14 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
     <%= f.label :password_digest %><br>
     <%= f.text_field :password_digest %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: 'waves-effect waves-light bt'%>
   </div>
 <% end %>

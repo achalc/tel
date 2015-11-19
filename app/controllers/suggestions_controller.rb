@@ -25,7 +25,7 @@ class SuggestionsController < ApplicationController
   # POST /suggestions.json
   def create
     @suggestion = Suggestion.new(suggestion_params)
-
+    @suggestion.user_id = current_user.id
     respond_to do |format|
       if @suggestion.save
         format.html { redirect_to @suggestion, notice: 'Suggestion was successfully created.' }
