@@ -2,7 +2,15 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
+.body {
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+	margin-bottom: -50px;	
+}
+
 .bottom_nav {
+	position: fixed;
 	bottom: 0;
 	display: table;
 	width: 100%;
