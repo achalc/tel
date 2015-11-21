@@ -86,7 +86,7 @@ $primary-color: color("blue", "lighten-2") !default;
 	font-size: 7pt;
 }
 
-body.login{
+body.login, .top_nav{
 	background-color: #955aa4;
 }
 
@@ -113,30 +113,30 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
     font-family: Aleo-Bold;
-    src: url(../fonts/Aleo-Bold.otf);
+    src: url(Aleo-Bold.otf);
 }
 
 @font-face {
     font-family: Aleo-Regular;
-    src: url(../fonts/Aleo-Regular.otf);
+    src: url(Aleo-Regular.otf);
 }
 
 @font-face {
     font-family: Aleo-LightItalic;
-    src: url(../fonts/Aleo-LightItalic.otf);
+    src: url(Aleo-LightItalic.otf);
 }
 
 @font-face {
     font-family: Aleo-BoldItalic;
-    src: url(../fonts/Aleo-BoldItalic.otf);
+    src: url(Aleo-BoldItalic.otf);
 }
 
 @font-face {
     font-family: Aleo-Italic;
-    src: url(../fonts/Aleo-Italic.otf);
+    src: url(Aleo-Italic.otf);
 }
 
 @font-face {
     font-family: Aleo-Light;
-    src: url(../fonts/Aleo-Light.otf);
+    src: url(Aleo-Light.otf);
 }

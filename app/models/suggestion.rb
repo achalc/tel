@@ -7,8 +7,8 @@ class Suggestion < ActiveRecord::Base
 
 	# validations
 	validates_presence_of :name, :description
-	experience_types = [['positive', 'positive'], ['okay', 'okay'], ['negative', 'negative']]
-	validates :experience_type, presence: true, inclusion: { in: experience_types }
+	EXPERIENCE_TYPES = [['positive', 'positive'], ['okay', 'okay'], ['negative', 'negative']]
+	validates :experience_type, presence: true, inclusion: { in: EXPERIENCE_TYPES }
 	CATEGORIES_LIST = [['Restaurant', 'restaurant'],['Bar', 'bar'], ['Attraction', 'attraction'], ['Event/Festival', 'event/festival'], ['Nightlife', 'nightlife'], ['Shopping', 'shopping'], ['Museum', 'museum'], ['Other', 'other']]
 	validates :category, presence: true, inclusion: { in: CATEGORIES_LIST.map{|a,b| b}, message: "is not a valid category"}
 
