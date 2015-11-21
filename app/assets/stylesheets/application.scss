@@ -2,6 +2,11 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
+body {
+	font-family: 'Source Sans Pro';
+	font-weight: 300;
+}
+
 .body {
 	overflow: hidden;
 	position: relative;
@@ -76,6 +81,7 @@ $primary-color: color("blue", "lighten-2") !default;
 
 .bottom_nav .nav-item .item-label {
 	display: block;
+	font-weight: 400;
 }
 
 .bottom_nav .nav-item_tel .item-label {
