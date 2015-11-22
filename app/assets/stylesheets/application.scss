@@ -2,6 +2,8 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
+ /* Body CSS */
+
 body {
 	font-family: 'Source Sans Pro';
 	font-weight: 300;
@@ -13,6 +15,22 @@ body {
 	min-height: 100%;
 	margin-bottom: -50px;	
 }
+
+body.login, .top_nav{
+	background-color: #955aa4;
+}
+
+body.reg {
+	background-color: White;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Aleo-LightItalic;
+	color: White;
+}
+
+
+ /* Bottom Nav CSS */
 
 .bottom_nav {
 	position: fixed;
@@ -91,13 +109,8 @@ body {
 	font-size: 7pt;
 }
 
-body.login, .top_nav{
-	background-color: #955aa4;
-}
 
-body.reg {
-	background-color: White;
-}
+/* Login CSS */
 
 .fbauth {
 	background-color: #3B5998;
@@ -107,14 +120,66 @@ body.reg {
 	text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: Aleo-LightItalic;
-	color: White;
-}
-
 .logo {
 	width: 70%;
 }
+
+
+/* Suggestion Feed CSS */
+
+.sugg-user {
+	width: 40px;
+	height: auto;
+}
+
+.positive {
+	color: #56bb8a;
+}
+
+.negative {
+	color: #be1e2d;
+}
+
+.okay {
+	color: #f7931d;
+}
+
+p.suggestionInfo {
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.suggestion {
+	margin: auto;	
+}
+
+.description {
+	font-size: 11px;
+}
+
+.star {
+	color: #a7a9ab;
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+img.sugg-photo {
+	height: 115px;
+	width: auto;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+	background-color: #DCDCDC;
+    border: 0 none;
+    color: #DCDCDC;
+    height: 1px;
+}
+
+/* Font Imports */
 
 @font-face {
     font-family: Aleo-Bold;
