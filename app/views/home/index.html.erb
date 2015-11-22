@@ -9,8 +9,9 @@
 		<br>
 		<span class="star"><i class="material-icons left">grade</i></span>
 		<br>
+		<br>
 	</div>
-	<div "col s8">
+	<div "col s10">
 		<p class="suggestionInfo">
 			<strong><%= suggestion.user.first_name + " " + suggestion.user.last_name[0] + "." %></strong> went to <strong><%= suggestion.location %></strong> and had 
 			<% if suggestion.experience_type == "positive" %>
@@ -25,12 +26,11 @@
 			<span class="description">
 				<%= suggestion.description %>
 			</span>
-			</div>
+			</div class="sugg-photo-div">
 				<%= image_tag (suggestion.photo_url), :class => "responsive-image sugg-photo" %>
 			</div>
 		</p>				
 	</div>
-	<div class="col s2"></div>
 	<hr>
 </div>
 <% end %>
