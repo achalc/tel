@@ -24,16 +24,6 @@ body.login, .top_nav, .fave{
 	background-color: Gray;
 }
 
-#notificationButtons {
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    height: 30px;
-	width: auto;
-	font-size: 11px;
-}
-
 body.reg {
 	background-color: White;
 }
@@ -216,6 +206,20 @@ hr {
 
 
 /* Notifications CSS */
+
+#notificationButtons {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 30px;
+	width: auto;
+	font-size: 11px;
+}
+
+.linktext {
+	font-size: 10px;
+}
 
 .hideContent {
     overflow: hidden;
