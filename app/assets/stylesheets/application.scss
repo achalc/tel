@@ -16,8 +16,22 @@ body {
 	margin-bottom: -50px;	
 }
 
-body.login, .top_nav{
+body.login, .top_nav, .fave{
 	background-color: #955aa4;
+}
+
+.gray {
+	background-color: Gray;
+}
+
+#notificationButtons {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 30px;
+	width: auto;
+	font-size: 11px;
 }
 
 body.reg {
@@ -162,6 +176,7 @@ p.suggestionInfo {
 	display: block;
 	margin: auto;
 	text-align: center;
+	padding-left: 7px;
 }
 
 img.sugg-photo {
@@ -178,6 +193,49 @@ hr {
     color: #DCDCDC;
     height: 1px;
 }
+
+/* User Profile CSS */
+
+.profile-box {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: #F0F0F0;
+}
+
+.profile-pic {
+	width: 100px;
+	height: auto;
+	padding-top: 5px;	
+}
+
+.profile-name {
+	font-size: 18px;
+}
+
+
+/* Notifications CSS */
+
+.hideContent {
+    overflow: hidden;
+    line-height: 1em;
+    height: 2em;
+}
+
+.showContent {
+    line-height: 1em;
+    height: auto;
+}
+.showContent{
+    height: auto;
+}
+
+.show-more {
+    padding: 10px 0;
+    text-align: center;
+}
+
 
 /* Font Imports */
 

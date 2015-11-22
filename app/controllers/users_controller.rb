@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @suggestions = @user.suggestions.most_recent.all
   end
 
   # GET /users/new
