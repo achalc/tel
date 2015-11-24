@@ -27,6 +27,8 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'koala'
+
 gem 'materialize-sass'
 
 gem 'faker'
@@ -37,6 +39,8 @@ gem 'populator'
 gem 'carrierwave'
 
 gem 'simple_form'
+
+gem 'pry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

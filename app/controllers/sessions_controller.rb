@@ -1,7 +1,10 @@
+require 'pry'
+
 class SessionsController < ApplicationController
 	
 	def create
-    user = User.from_omniauth(env["omniauth.auth"])
+    koala_user = User.koala(request.env['omniauth.auth']['credentials'])
+    user = User.login(koala_user, env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to index_url
 	end

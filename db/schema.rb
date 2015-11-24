@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116231305) do
+ActiveRecord::Schema.define(version: 20151124053127) do
 
   create_table "favorites", force: :cascade do |t|
     t.string   "user_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151116231305) do
     t.string   "oauth_token"
     t.string   "name"
     t.datetime "oauth_expires_at"
+    t.string   "photo_url"
   end
 
 end
