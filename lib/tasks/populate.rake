@@ -5,7 +5,7 @@ namespace :db do
 		require 'populator'
 		require 'faker'
 
-		[Category, Friend, Notification, Photo, Suggestion, User].each(&:delete_all)
+		[Friend, Notification, Suggestion, User].each(&:delete_all)
 		
 		100.times do
 			user = User.new
@@ -16,19 +16,13 @@ namespace :db do
 			user.save!
 		end
 
-		10.times do
-			category = Category.new
-			category.name = Faker::Commerce.department
-			category.save!
-		end
-
 		1000.times do
 			suggestion = Suggestion.new
 			suggestion.user_id = User.offset(rand(User.count)).first.id
-			suggestion.category_id = Category.offset(rand(Category.count)).first.id
 			suggestion.name = Faker::Lorem.sentence(3)
 			suggestion.description = Faker::Lorem.paragraph
-			suggestion.liked = true
+			suggestion.category = Suggestion::CATEGORIES_LIST[rand(Suggestion::CATEGORIES_LIST.count - 1)].first[1]
+			suggestion.experience_type = Suggestion::EXPERIENCE_TYPES[rand(Suggestion::EXPERIENCE_TYPES.count - 1)].first[1]
 			suggestion.location = Faker::Company.name
 			suggestion.save!
 		end 	
