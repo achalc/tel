@@ -35,6 +35,8 @@ gem 'faker'
 
 gem 'populator'
 
+gem 'placeholdit'
+
 # Use carrierwave to upload instructor photos
 gem 'carrierwave'
 
