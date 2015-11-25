@@ -2,12 +2,39 @@
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
 
+ /* Body CSS */
+
+body {
+	font-family: 'Source Sans Pro';
+	font-weight: 300;
+}
+
 .body {
 	overflow: hidden;
 	position: relative;
 	min-height: 100%;
 	margin-bottom: -50px;	
 }
+
+body.login, .top_nav, .fave{
+	background-color: #955aa4;
+}
+
+.gray {
+	background-color: Gray;
+}
+
+body.reg {
+	background-color: White;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Aleo-LightItalic;
+	color: White;
+}
+
+
+ /* Bottom Nav CSS */
 
 .bottom_nav {
 	position: fixed;
@@ -62,37 +89,32 @@ $primary-color: color("blue", "lighten-2") !default;
 	top: 3px;
 	width: 30px;
 	height: 30px;
-	padding-top: 0;
-	padding-bottom: 0;	
+	margin-top: 5px;
 }
 
 .bottom_nav .nav-item_tel .icon {
-	top: 3px;
-	width: 40px;
-	height: 40px;
-	padding-top: 5;
-	padding-bottom: 0;	
+	top: 5px;
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
 }
 
 .bottom_nav .nav-item .item-label {
 	display: block;
+	font-weight: 400;
 }
 
 .bottom_nav .nav-item_tel .item-label {
 	display: block;
+	font-weight: 400;
 }
 
 .item-label {
 	font-size: 7pt;
 }
 
-body.login{
-	background-color: #955aa4;
-}
 
-body.reg {
-	background-color: White;
-}
+/* Login CSS */
 
 .fbauth {
 	background-color: #3B5998;
@@ -102,41 +124,151 @@ body.reg {
 	text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: Aleo-LightItalic;
-	color: White;
-}
-
 .logo {
 	width: 70%;
 }
 
+
+/* Suggestion Feed CSS */
+
+.sugg-user {
+	width: 40px;
+	height: auto;
+}
+
+.positive {
+	color: #56bb8a;
+}
+
+.negative {
+	color: #be1e2d;
+}
+
+.okay {
+	color: #f7931d;
+}
+
+p.suggestionInfo {
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.suggestion {
+	margin: auto;	
+}
+
+.description {
+	font-size: 11px;
+}
+
+.star {
+	color: #a7a9ab;
+	display: block;
+	margin: auto;
+	text-align: center;
+	padding-left: 7px;
+}
+
+img.sugg-photo {
+	height: 115px;
+	width: auto;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+	background-color: #DCDCDC;
+    border: 0 none;
+    color: #DCDCDC;
+    height: 1px;
+}
+
+/* User Profile CSS */
+
+.profile-box {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: #F0F0F0;
+}
+
+.profile-pic {
+	width: 100px;
+	height: auto;
+	padding-top: 5px;	
+}
+
+.profile-name {
+	font-size: 18px;
+}
+
+
+/* Notifications CSS */
+
+#notificationButtons {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 30px;
+	width: auto;
+	font-size: 11px;
+}
+
+.linktext {
+	font-size: 10px;
+}
+
+.hideContent {
+    overflow: hidden;
+    line-height: 1em;
+    height: 2em;
+}
+
+.showContent {
+    line-height: 1em;
+    height: auto;
+}
+.showContent{
+    height: auto;
+}
+
+.show-more {
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+/* Font Imports */
+
 @font-face {
     font-family: Aleo-Bold;
-    src: url(../fonts/Aleo-Bold.otf);
+    src: url(Aleo-Bold.otf);
 }
 
 @font-face {
     font-family: Aleo-Regular;
-    src: url(../fonts/Aleo-Regular.otf);
+    src: url(Aleo-Regular.otf);
 }
 
 @font-face {
     font-family: Aleo-LightItalic;
-    src: url(../fonts/Aleo-LightItalic.otf);
+    src: url(Aleo-LightItalic.otf);
 }
 
 @font-face {
     font-family: Aleo-BoldItalic;
-    src: url(../fonts/Aleo-BoldItalic.otf);
+    src: url(Aleo-BoldItalic.otf);
 }
 
 @font-face {
     font-family: Aleo-Italic;
-    src: url(../fonts/Aleo-Italic.otf);
+    src: url(Aleo-Italic.otf);
 }
 
 @font-face {
     font-family: Aleo-Light;
-    src: url(../fonts/Aleo-Light.otf);
+    src: url(Aleo-Light.otf);
 }

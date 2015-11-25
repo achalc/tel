@@ -1,37 +1,42 @@
-<%= form_for(@suggestion) do |f| %>
-  <% if @suggestion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
-
-      <ul>
-      <% @suggestion.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row">
+  <form class="col s12">
+    <%= form_for(@suggestion) do |f| %>
+      <% if @suggestion.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
+          <ul>
+          <% @suggestion.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="input-field">
-    <%= f.label :category %><br>
-    <%= f.collection_select :category, Suggestion::CATEGORIES_LIST, :to_s, :to_s, include_blank: false %>
-  </div>
-  <div class="input-field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="input-field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="input-field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <div class="input-field col s12">
+        <%= f.text_field :name %>
+        <%= f.label :name %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.text_area :description, :class => "materialize-textarea" %>
+        <%= f.label :description %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.collection_select :category, :collection => Suggestion::CATEGORIES_LIST, :prompt => "Select a category..." %>
+        <%= f.label :category %>        
+      <div class="input-field col s12">
+        <%= f.collection_select :experience_type, :collection => Suggestion::EXPERIENCE_TYPES %>
+        <%= f.label "What was your experience like?" %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.text_field :location %>
+        <%= f.label :location %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.file_field :photo %>
+        <%= f.label :photo %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </form>
+</div>

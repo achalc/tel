@@ -1,0 +1,13 @@
+<div class="navbar-fixed">
+	<nav class="top_nav">
+		<div class="nav-wrapper">
+		  <h6 class="brand-logo center"><%= yield(:title) %></h6>
+		  <ul id="nav-mobile" class="left">
+	        <li><a href=<%= yield(:leftlink) %>><%= yield(:topleft) %></a></li>
+	      </ul>
+	      <ul id="nav-mobile" class="right">
+	        <li><a href=<%= yield(:rightlink) %>><%= yield(:topright) %></a></li>
+	      </ul>
+		</div>
+	</nav>
+</div>

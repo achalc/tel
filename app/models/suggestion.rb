@@ -13,6 +13,6 @@ class Suggestion < ActiveRecord::Base
 	# validates :category, presence: true, inclusion: { in: CATEGORIES_LIST.map{|a,b| b}, message: "is not a valid category"}
 
 	# scopes
-	scope :created_at, -> { order('suggestions.created_at DESC') }
+	scope :most_recent, -> { order(created_at: :desc) }
 
 end
