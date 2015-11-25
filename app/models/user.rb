@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   		user.provider = 'facebook'
 	  	user.uid = koala_user['id']
 	  	user.name = koala_user['name']
-	  	user.photo_url = koala_user['picture']['data']['url']
+	  	user.profile_picture = koala_user['picture']['data']['url']
 	  	user.oauth_token = auth.credentials.token
   		user.oauth_expires_at = Time.at(auth.credentials.expires_at)
 	 	user.save!

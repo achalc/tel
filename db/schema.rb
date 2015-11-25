@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20151124053127) do
     t.string   "oauth_token"
     t.string   "name"
     t.datetime "oauth_expires_at"
-    t.string   "photo_url"
+    t.string   "profile_picture"
   end
 
 end

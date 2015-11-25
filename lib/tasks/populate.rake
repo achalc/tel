@@ -7,7 +7,7 @@ namespace :db do
 
 		[Friend, Notification, Suggestion, User].each(&:delete_all)
 		
-		100.times do
+		10.times do
 			user = User.new
 			user.first_name = Faker::Name.first_name
 			user.last_name = Faker::Name.last_name
