@@ -15,8 +15,8 @@
 		<%= image_tag 'bellGray.png', class: "icon" %>
 		<span class="item-label">Notification</span>
 	<% end %>
-	<%= link_to index_path, :class => "nav-item" do %>
-		<%= image_tag 'profileGray.png', class: "icon" %>
+	<%= link_to User.find(session[:user_id]), :class => "nav-item" do %>
+		<%= image_tag (User.find(session[:user_id]).profile_picture), :class => "icon" %>
 		<span class="item-label">Profile</span>
 	<% end %>
 </nav>
