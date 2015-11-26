@@ -62,6 +62,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def friend
+    # check if they're already friends before creating records in model
+    friend = Friend.new(user_id_1: session[:user_id], user_id_2: params[:user_id_2])
+    @redir_friend = User.find(params[:user_id_2])
+    # binding.pry
+    if friend.save
+      redirect_to @redir_friend, notice: '... is now your friend!'
+    else
+      redirect_to @redir_friend, notice: '... could not be added as your friend at this time.'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
