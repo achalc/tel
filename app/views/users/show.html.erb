@@ -9,7 +9,7 @@
 		<%= image_tag (@user.profile_picture), :class => "circle responsive-image profile-pic" %><br>
 		<strong><%= @suggestions.count %> suggestions </strong> <br>
 		<% if @user.id == session[:user_id] %>
-			<strong>Your Profile</strong>
+			<strong><%= 'You have ' + @user.count_friends.to_s + ' friends'%></strong>
 		<% elsif !Friend.are_friends(session[:user_id], @user.id) %>
 			<strong><%= button_to 'Add Friend', friend_user_path(user_id_2: @user.id)%></strong>
 		<% else %>

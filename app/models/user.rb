@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     facebook.get_object("me?fields=name,picture,friends")
   end
 
+  def count_friends
+  	Friend.where(user_id_1: self.id).count + Friend.where(user_id_2: self.id).count 
+  end
+
   # TO DO: create friendships with others who use the app
 
   def self.login(koala_user, auth)

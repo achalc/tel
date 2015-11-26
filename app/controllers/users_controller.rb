@@ -63,7 +63,6 @@ class UsersController < ApplicationController
   end
 
   def friend
-    # check if they're already friends before creating records in model
     friend = Friend.new(user_id_1: session[:user_id], user_id_2: params[:user_id_2])
     @redir_friend = User.find(params[:user_id_2])
     # binding.pry
