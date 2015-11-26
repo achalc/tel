@@ -7,7 +7,8 @@
 	<div class="col s12 profile-box">
 		<p><span class="profile-name"><strong><%= @user.name %></strong></span> <br>
 		<%= image_tag (@user.profile_picture), :class => "circle responsive-image profile-pic" %><br>
-		<strong><%= @suggestions.count %> suggestions </strong>
+		<strong><%= @suggestions.count %> suggestions </strong> <br>
+		<strong><%= link_to 'Add Friend', '#' %></strong>
 		</p>
 	</div>
 </div>
