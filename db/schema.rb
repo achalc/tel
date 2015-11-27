@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20151126200532) do
 
   create_table "favorites", force: :cascade do |t|

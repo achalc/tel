@@ -1,13 +1,21 @@
 <% content_for :body_class, 'reg' %>
-<% content_for :title, "@User's Profile" %>
+<% content_for :title, @user.name + "'s Profile" %>
 <% content_for :topleft, "Back" %>
 <% content_for :leftlink, "/index/" %>
 
 <div class="row">
 	<div class="col s12 profile-box">
-		<p><span class="profile-name"><strong><%= @user.first_name + " " + @user.last_name %></strong></span> <br>
-		<%= image_tag (@user.photo_url), :class => "circle responsive-image profile-pic" %><br>
-		<strong><%= @suggestions.count %> suggestions </strong>
+		<p><span class="profile-name"><strong><%= @user.name %></strong></span> <br>
+		<%= image_tag (@user.profile_picture), :class => "circle responsive-image profile-pic" %><br>
+		<strong><%= @suggestions.count %> suggestions </strong> <br>
+		<% if @user.id == session[:user_id] %>
+			<strong><%= 'You have ' + @user.count_friends.to_s + ' friends'%></strong>
+		<% elsif !Friend.are_friends(session[:user_id], @user.id) %>
+			<strong><%= button_to 'Add Friend', friend_user_path(user_id_2: @user.id)%></strong>
+		<% else %>
+			<strong><%= 'You and ' + @user.name + ' are friends' %></strong>
+			<strong><%= button_to 'Unfriend', unfriend_user_path(user_id_2: @user.id)%></strong>
+		<% end %>
 		</p>
 	</div>
 </div>
@@ -15,7 +23,7 @@
 <% @suggestions.each do |suggestion| %>
 <div class="row suggestion">
 	<div class="col s2">
-		<%= image_tag (@user.photo_url), :class => "circle responsive-image sugg-user" %>
+		<%= image_tag (@user.profile_picture), :class => "circle responsive-image sugg-user" %>
 		<br>
 		<span class="star"><i class="material-icons left">grade</i></span>
 		<br>
@@ -23,7 +31,7 @@
 	</div>
 	<div "col s8">
 		<p class="suggestionInfo">
-			<strong><%= @user.first_name + " " + @user.last_name[0] + "." %></strong> went to <strong><%= suggestion.location %></strong> and had 
+			<strong><%= @user.name + "." %></strong> went to <strong><%= suggestion.location %></strong> and had 
 			<% if suggestion.experience_type == "positive" %>
 				a <strong><span class="positive"> <%= suggestion.experience_type %></span></strong>
 			<% elsif suggestion.experience_type == "okay" %>

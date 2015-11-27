@@ -2,8 +2,14 @@ Rails.application.routes.draw do
   resources :favorites
   resources :suggestions
   resources :friends
-  resources :users
   resources :notifications
+
+  resources :users do
+    member do 
+      post 'friend'
+      post 'unfriend'
+    end 
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
