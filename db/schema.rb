@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116231305) do
+ActiveRecord::Schema.define(version: 20151126200532) do
 
   create_table "favorites", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "suggestion_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "suggestion_id"
   end
 
   create_table "friends", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id_1"
+    t.integer  "user_id_2"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151116231305) do
     t.string   "oauth_token"
     t.string   "name"
     t.datetime "oauth_expires_at"
+    t.string   "profile_picture"
   end
 
 end
