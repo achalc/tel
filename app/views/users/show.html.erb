@@ -14,6 +14,7 @@
 			<strong><%= button_to 'Add Friend', friend_user_path(user_id_2: @user.id)%></strong>
 		<% else %>
 			<strong><%= 'You and ' + @user.name + ' are friends' %></strong>
+			<strong><%= button_to 'Unfriend', unfriend_user_path(user_id_2: @user.id)%></strong>
 		<% end %>
 		</p>
 	</div>

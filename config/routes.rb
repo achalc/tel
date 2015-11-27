@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     member do 
       post 'friend'
+      post 'unfriend'
     end 
   end 
   # The priority is based upon order of creation: first created -> highest priority.

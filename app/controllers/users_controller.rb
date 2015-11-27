@@ -65,12 +65,20 @@ class UsersController < ApplicationController
   def friend
     friend = Friend.new(user_id_1: session[:user_id], user_id_2: params[:user_id_2])
     @redir_friend = User.find(params[:user_id_2])
-    # binding.pry
     if friend.save
       redirect_to @redir_friend, notice: '... is now your friend!'
     else
       redirect_to @redir_friend, notice: '... could not be added as your friend at this time.'
     end
+  end
+
+  def unfriend
+    friend = Friend.where(user_id_1: session[:user_id], user_id_2: params[:user_id_2]).first
+    if friend.blank?
+      friend = Friend.where(user_id_1: params[:user_id_2], user_id_2: session[:user_id]).first
+    end 
+    Friend.destroy(friend.id)
+    redirect_to User.find(params[:user_id_2])
   end
 
   private
