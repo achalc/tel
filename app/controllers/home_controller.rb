@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
 	def index
-		@suggestions = Suggestion.most_recent.all
+		@suggestions = Suggestion.for_friends(current_user).most_recent.all
 	end
 
 	def login 

@@ -14,5 +14,6 @@ class Suggestion < ActiveRecord::Base
 
 	# scopes
 	scope :most_recent, -> { order(created_at: :desc) }
+	scope :for_friends, -> (current_user) { where(user_id: current_user.friends.map{|a| a.id})}
 
 end
