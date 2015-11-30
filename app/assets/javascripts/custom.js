@@ -14,4 +14,6 @@ $(document).on('ready page:load', function () {
 
 	    $this.text(linkText);
 	});
+
+    $('select').material_select();
 });
