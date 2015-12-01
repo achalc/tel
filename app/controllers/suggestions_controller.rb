@@ -29,7 +29,7 @@ class SuggestionsController < ApplicationController
     respond_to do |format|
       if @suggestion.save
         if !params[:told_ids].empty?
-          tel_user_text = current_user.name + " told you about " + suggestion.name
+          tel_user_text = current_user.name + " told you about " + suggestion.location
           params[:told_ids].each do |told_user_id|
             notification = Notification.new(user_id: told_user_id, description: tel_user_text)
             notification.save
