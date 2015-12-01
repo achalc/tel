@@ -5,7 +5,7 @@
 <% @notifications.each do |notification| %>
 <div class="row suggestion">
   <div class="col s2">
-    <%= image_tag (notification.user.profile_picture), :class => "circle responsive-image sugg-user" %>
+    <%= image_tag (User.find(notification.notifier_id).profile_picture), :class => "circle responsive-image sugg-user" %>
     <br>
     <br>
   </div>

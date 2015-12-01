@@ -67,7 +67,7 @@ class UsersController < ApplicationController
     @redir_friend = User.find(params[:user_id_2])
     if friend.save
       new_friend_text = current_user.name + " is now your friend!"
-      notification = Notification.new(user_id: params[:user_id_2], description: new_friend_text)
+      notification = Notification.new(user_id: params[:user_id_2], notifier_id: current_user.id, description: new_friend_text)
       notification.save
       redirect_to @redir_friend
     else
