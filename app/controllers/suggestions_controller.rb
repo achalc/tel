@@ -28,6 +28,13 @@ class SuggestionsController < ApplicationController
     @suggestion.user_id = current_user.id
     respond_to do |format|
       if @suggestion.save
+        if !params[:told_ids].empty?
+          tel_user_text = current_user.name + " told you about " + suggestion.name
+          params[:told_ids].each do |told_user_id|
+            notification = Notification.new(user_id: told_user_id, description: tel_user_text)
+            notification.save
+          end
+        end
         format.html { redirect_to @suggestion, notice: 'Suggestion was successfully created.' }
         format.json { render :show, status: :created, location: @suggestion }
       else
@@ -69,6 +76,6 @@ class SuggestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def suggestion_params
-      params.require(:suggestion).permit(:user_id, :name, :description, :experience_type, :category, :location, :photo)
+      params.require(:suggestion).permit(:user_id, :name, :description, :experience_type, :category, :location, :photo, :told_ids => [])
     end
 end
