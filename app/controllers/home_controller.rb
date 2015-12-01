@@ -2,6 +2,8 @@ class HomeController < ApplicationController
 
 	def index
 		@suggestions = Suggestion.for_friends(current_user).most_recent.all
+		@suggestions = Suggestion.most_recent.all if @suggestions.empty?
+		# binding.pry
 	end
 
 	def login 
