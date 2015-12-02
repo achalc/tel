@@ -23,9 +23,11 @@
         <% end %>
       </p>  
     </div>
-    <div class="show-more">
-      <a class="linktext" href="#">Show more</a>
-    </div>
+    <% if !notification.description.include? " is now your friend!" %>
+      <div class="show-more">
+        <a class="linktext" href="#">Show more</a>
+      </div>
+    <% end %>
   </div>
   <div class="col s2"></div>
   <hr>
