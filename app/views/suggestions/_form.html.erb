@@ -11,16 +11,12 @@
       </div>
     <% end %>
     <div class="input-field col s12">
-      <%= f.text_field :name %>
-      <%= f.label :name %>
+      <%= f.text_field :location %>
+      <%= f.label :location %>
     </div>
     <div class="input-field col s12">
       <%= f.text_field :description %>
       <%= f.label :description %>
-    </div>
-    <div class="input-field col s12">
-      <%= f.text_field :location %>
-      <%= f.label :location %>
     </div>
     <div class="input-field col s12">
       <%= f.select :experience_type, :collection => Suggestion::EXPERIENCE_TYPES, :prompt => "What was your experience like?" %>
