@@ -1,49 +1,47 @@
 <div class="row">
-  <form class="col s12">
-    <%= form_for(@suggestion) do |f| %>
-      <% if @suggestion.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
-          <ul>
-          <% @suggestion.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="input-field col s12">
-        <%= f.text_field :name %>
-        <%= f.label :name %>
-      </div>
-      <div class="input-field col s12">
-        <%= f.text_field :description %>
-        <%= f.label :description %>
-      </div>
-      <div class="input-field col s12">
-        <%= f.text_field :location %>
-        <%= f.label :location %>
-      </div>
-      <div class="input-field col s12">
-        <%= f.select :experience_type, :collection => Suggestion::EXPERIENCE_TYPES, :prompt => "What was your experience like?" %>
-        <%= f.label "What was your experience like?" %>
-      </div>
-      <div class="input-field col s12">
-        <%= f.select :category, :collection => Suggestion::CATEGORIES_LIST, :prompt => "Select a category..." %>
-        <%= f.label :category %> 
-      </div>       
-      <div class="file-field input-field col s12">
-        <div class="btn">
-          <span>File</span>
-           <%= f.file_field :photo %>
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
-      <br>
-      <div class="actions col s12">
-          <%= f.submit :class => "btn waves-effect waves-light fave"%>
+  <%= form_for(@suggestion, :html => { :class => "input-field col s12"}, method: :post) do |f| %>
+    <% if @suggestion.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
+        <ul>
+        <% @suggestion.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
     <% end %>
-  </form>
+    <div class="input-field col s12">
+      <%= f.text_field :name %>
+      <%= f.label :name %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.text_field :description %>
+      <%= f.label :description %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.text_field :location %>
+      <%= f.label :location %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.select :experience_type, :collection => Suggestion::EXPERIENCE_TYPES, :prompt => "What was your experience like?" %>
+      <%= f.label "What was your experience like?" %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.select :category, :collection => Suggestion::CATEGORIES_LIST, :prompt => "Select a category..." %>
+      <%= f.label :category %> 
+    </div>       
+    <div class="file-field input-field col s12">
+      <div class="btn">
+        <span>File</span>
+         <%= f.file_field :photo %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <br>
+    <div class="actions col s12">
+        <%= f.submit class: "btn waves-effect waves-light fave"%>
+    </div>
+  <% end %>
 </div>
