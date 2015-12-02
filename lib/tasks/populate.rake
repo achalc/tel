@@ -21,8 +21,8 @@ namespace :db do
 			suggestion.user_id = User.offset(rand(User.count)).first.id
 			suggestion.name = Faker::Lorem.sentence(3)
 			suggestion.description = Faker::Lorem.paragraph
-			suggestion.category = Suggestion::CATEGORIES_LIST[rand(Suggestion::CATEGORIES_LIST.count - 1)][1]
-			suggestion.experience_type = Suggestion::EXPERIENCE_TYPES[rand(Suggestion::EXPERIENCE_TYPES.count - 1)][1]
+			suggestion.category = Suggestion::CATEGORIES_LIST[rand(Suggestion::CATEGORIES_LIST.count)][1]
+			suggestion.experience_type = Suggestion::EXPERIENCE_TYPES[rand(Suggestion::EXPERIENCE_TYPES.count)][1]
 			suggestion.location = Faker::Company.name
 			suggestion.photo = Faker::Placeholdit.image("50x50")
 			suggestion.save!
