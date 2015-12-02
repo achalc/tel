@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20151201231903) do
     t.boolean  "seen"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "description"
     t.integer  "notifier_id"
   end
 
