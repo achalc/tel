@@ -35,7 +35,7 @@ class SuggestionsController < ApplicationController
             notification.save
           end
         end
-        format.html { redirect_to @suggestion, notice: 'Suggestion was successfully created.' }
+        format.html { redirect_to :index }
         format.json { render :show, status: :created, location: @suggestion }
       else
         format.html { render :new }
