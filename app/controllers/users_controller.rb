@@ -66,9 +66,12 @@ class UsersController < ApplicationController
     friend = Friend.new(user_id_1: session[:user_id], user_id_2: params[:user_id_2])
     @redir_friend = User.find(params[:user_id_2])
     if friend.save
-      redirect_to @redir_friend, notice: '... is now your friend!'
+      new_friend_text = current_user.name + " is now your friend!"
+      notification = Notification.new(user_id: params[:user_id_2], notifier_id: current_user.id, description: new_friend_text)
+      notification.save
+      redirect_to @redir_friend
     else
-      redirect_to @redir_friend, notice: '... could not be added as your friend at this time.'
+      redirect_to @redir_friend#, notice: '... could not be added as your friend at this time.'
     end
   end
 
