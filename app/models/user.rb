@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
 	has_many :suggestions
 	has_many :favorites
 
-  	# scopes 
-  	scope :alphabetical, -> {order('name') }
+	# scopes 
+	scope :alphabetical, -> {order('name') }
+  scope :search, ->(term) { where('name LIKE ?', "#{term}%" ) }
 
 	# validates_presence_of :first_name, :last_name, :email, :password_digest
 
