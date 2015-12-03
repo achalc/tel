@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   get 'index', to: 'home#index', as: 'index'
 
+  post 'favorite_suggestion', to: 'home#favorite', as: 'favorite_suggestion'
+  post 'unfavorite_suggestion', to: 'home#unfavorite', as: 'unfavorite_suggestion'
+
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
