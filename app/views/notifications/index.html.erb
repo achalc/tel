@@ -5,38 +5,29 @@
 <% @notifications.each do |notification| %>
 <div class="row suggestion">
   <div class="col s2">
-    <%= image_tag (notification.user.profile_picture), :class => "circle responsive-image sugg-user" %>
+    <%= image_tag (User.find(notification.notifier_id).profile_picture), :class => "circle responsive-image sugg-user" %>
     <br>
     <br>
   </div>
   <div "col s8">
     <div class= "content hideContent">
       <p class="suggestionInfo">
-        <strong><%= notification.user.first_name + " " + notification.user.last_name[0] + "." %></strong> told you about <strong><%= notification.suggestion.location %></strong>. <br>
-        <%= notification.user.first_name %></strong> had
-        <% if notification.suggestion.experience_type == "positive" %>
-          a <strong><span class="positive"> <%= notification.suggestion.experience_type %></span></strong>
-        <% elsif notification.suggestion.experience_type == "okay" %>
-          an <strong><span class="okay"> <%= notification.suggestion.experience_type %></span></strong>
-        <% elsif notification.suggestion.experience_type == "negative" %>
-          a <strong><span class="negative"> <%= notification.suggestion.experience_type %></span></strong>
+        <strong><%= notification.description %></strong> <strong><%#= notification.suggestion.location %></strong>
+
+        <%#= image_tag (notification.suggestion.photo_url), :class => "responsive-image sugg-photo" %>
+        <% if !notification.description.include? " is now your friend!" %>
+          <div id= "notificationButtons">
+            <a class="waves-effect waves-light btn gray"><i class="material-icons left">done</i>Got it!</a>
+            <a class="waves-effect waves-light btn fave"><i class="material-icons left">grade</i>Add to Favorites</a>
+          </div>
         <% end %>
-        experience. 
-        <br><br>
-        <span class="description">
-          <%= notification.suggestion.description %>
-        </span>
-        <br><br>
-        <%= image_tag (notification.suggestion.photo_url), :class => "responsive-image sugg-photo" %>
-        <div id= "notificationButtons">
-          <a class="waves-effect waves-light btn gray"><i class="material-icons left">done</i>Got it!</a>
-          <a class="waves-effect waves-light btn fave"><i class="material-icons left">grade</i>Add to Favorites</a>
-        </div>
       </p>  
     </div>
-    <div class="show-more">
-      <a class="linktext" href="#">Show more</a>
-    </div>
+    <% if !notification.description.include? " is now your friend!" %>
+      <div class="show-more">
+        <a class="linktext" href="#">Show more</a>
+      </div>
+    <% end %>
   </div>
   <div class="col s2"></div>
   <hr>

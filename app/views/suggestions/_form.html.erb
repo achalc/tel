@@ -15,7 +15,7 @@
       <%= f.label :location %>
     </div>
     <div class="input-field col s12">
-      <%= f.text_field :description %>
+      <%= f.text_area :description, :class => "materialize-textarea" %>
       <%= f.label :description %>
     </div>
     <div class="input-field col s12">
@@ -36,7 +36,7 @@
       </div>
     </div>
     <br>
-    <div class="actions col s12">
+    <div class="actions col s12 submitButton">
         <%= f.submit class: "btn waves-effect waves-light fave"%>
     </div>
   <% end %>
