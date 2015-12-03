@@ -16,4 +16,6 @@ $(document).on('ready page:load', function () {
 	});
 
     $('select').material_select();
+    
+    $('.materialboxed').materialbox();
 });

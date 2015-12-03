@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   root 'home#login'
 
   get 'index', to: 'home#index', as: 'index'
+  get 'home/search', to: 'home#search', as: 'search'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
