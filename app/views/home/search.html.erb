@@ -3,6 +3,8 @@
 <% content_for :topleft, "Back" %>
 <% content_for :leftlink, "/index/" %>
 
+<%= render 'partials/searchbar' %>
+
 <div class="searchResultsBody">
 	<p class="searchResult">Search result for term <em>'<%= @query %>'</em> resulted in <%= pluralize(@total_hits, 'hit') %></p>
 
