@@ -9,7 +9,15 @@
 	<div class="col s2">
 		<%= image_tag (suggestion.user.profile_picture), :class => "circle responsive-image sugg-user" %>
 		<br>
-		<span class="star"><i class="material-icons left">grade</i></span>
+		<% if (suggestion.favorites == 0) || (!suggestion.favorites.map { |e| e.user_id }.include? current_user.id) %>
+			<%= link_to favorite_suggestion_path(suggestion_id: suggestion.id), method: :post do %>
+				<span class="star"><i class="material-icons left">grade</i></span>
+			<% end %>
+		<% else %>
+			<%= link_to unfavorite_suggestion_path(suggestion_id: suggestion.id), method: :post do %>
+				<span class="star-favorited"><i class="material-icons left">grade</i></span>
+			<% end %>
+		<% end %>
 		<br>
 		<br>
 	</div>

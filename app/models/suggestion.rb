@@ -3,6 +3,7 @@ class Suggestion < ActiveRecord::Base
 
 	# relationships
 	belongs_to :user
+	has_many :favorites
 	has_many :notifications
 
 	# validations

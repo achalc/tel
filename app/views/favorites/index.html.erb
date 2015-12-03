@@ -1,35 +1,49 @@
-<p id="notice"><%= notice %></p>
+<% content_for :body_class, 'reg' %>
+<% content_for :title, 'Favorites' %>
 
-<h1>Listing Favorites</h1>
-
-<body>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Suggestion</th>
-        <th>Liked</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @favorites.each do |favorite| %>
-        <tr>
-          <td><%= favorite.user_id %></td>
-          <td><%= favorite.suggestion_id %></td>
-          <td><%= favorite.liked %></td>
-          <td><%= link_to 'Show', favorite %></td>
-          <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
-          <td><%= link_to 'Destroy', favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+<% if @favorites.count == 0 %>
+    <br><br>
+    <br><br>
+    <h5 class="no-favs center">You don't have any favorites yet!</h5>
+<% else %>
+  <% @favorites.each do |favorite| %>
+  <div class="row suggestion">
+    <div class="col s2">
+      <%= image_tag (favorite.suggestion.user.profile_picture), :class => "circle responsive-image sugg-user" %>
+      <br>
+      <% if (favorite.suggestion.favorites == 0) || (!favorite.suggestion.favorites.map { |e| e.user_id }.include? current_user.id) %>
+        <%= link_to favorite_suggestion_path(suggestion_id: favorite.suggestion.id, from_favorites: true), method: :post do %>
+          <span class="star"><i class="material-icons left">grade</i></span>
+        <% end %>
+      <% else %>
+        <%= link_to unfavorite_suggestion_path(suggestion_id: favorite.suggestion.id, from_favorites: true), method: :post do %>
+          <span class="star-favorited"><i class="material-icons left">grade</i></span>
+        <% end %>
       <% end %>
-    </tbody>
-  </table>
-
-  
-</body>
-
-<br>
-
-<%= link_to 'New Favorite', new_favorite_path %>
+      <br>
+      <br>
+    </div>
+    <div "col s8">
+      <p class="suggestionInfo">
+        <strong><%= favorite.suggestion.user.name + "." %></strong> went to <strong><%= favorite.suggestion.location %></strong> and had 
+        <% if favorite.suggestion.experience_type == "positive" %>
+          a <strong><span class="positive"> <%= favorite.suggestion.experience_type %></span></strong>
+        <% elsif favorite.suggestion.experience_type == "okay" %>
+          an <strong><span class="okay"> <%= favorite.suggestion.experience_type %></span></strong>
+        <% elsif favorite.suggestion.experience_type == "negative" %>
+          a <strong><span class="negative"> <%= favorite.suggestion.experience_type %></span></strong>
+        <% end %>
+        <br><br>
+        <span class="description">
+          <%= favorite.suggestion.description %>
+        </span>
+        </div>
+          <%= image_tag (favorite.suggestion.photo_url), :class => "responsive-image sugg-photo" %>
+        </div>
+      </p>        
+    </div>
+    <div class="col s2"></div>
+    <hr>
+  </div>
+  <% end %>
+<% end %>

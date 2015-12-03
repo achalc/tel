@@ -161,6 +161,8 @@ p.suggestionInfo {
 	font-size: 11px;
 }
 
+/* Favorites CSS */
+
 .star {
 	color: #a7a9ab;
 	display: block;
@@ -168,6 +170,20 @@ p.suggestionInfo {
 	text-align: center;
 	padding-left: 7px;
 }
+
+.star-favorited {
+	color: #FFD700;
+	display: block;
+	margin: auto;
+	text-align: center;
+	padding-left: 7px;
+}
+
+.no-favs {
+	font-size: 18px;
+	color: #000000;
+}
+
 
 img.sugg-photo {
 	height: 115px;
@@ -295,3 +311,5 @@ hr {
     font-family: Aleo-Light;
     src: url(Aleo-Light.otf);
 }
+
+
