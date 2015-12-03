@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203175102) do
+ActiveRecord::Schema.define(version: 20151201231903) do
 
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20151203175102) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "notifier_id"
+<<<<<<< HEAD
     t.string   "description"
+=======
+>>>>>>> search
   end
 
   create_table "suggestions", force: :cascade do |t|

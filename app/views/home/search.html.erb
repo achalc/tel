@@ -1,0 +1,20 @@
+<% content_for :body_class, 'reg' %>
+<% content_for :title, "Search Results" %>
+<% content_for :topleft, "Back" %>
+<% content_for :leftlink, "/index/" %>
+
+<%= render 'partials/searchbar' %>
+
+<div class="searchResultsBody">
+	<p class="searchResult">Search result for term <em>'<%= @query %>'</em> resulted in <%= pluralize(@total_hits, 'hit') %></p>
+
+
+	<% unless @users.empty? %>
+		<p><em><strong>Users matching term '<%= @query %>'</strong></em></p>
+		<ul>
+			<% for user in @users do %>
+				<li><%= link_to user.name, user_path(user) %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>

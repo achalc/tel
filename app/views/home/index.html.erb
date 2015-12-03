@@ -1,6 +1,8 @@
 <% content_for :body_class, 'reg' %>
 <% content_for :title, "Suggestion Feed" %>
 
+<%= render 'partials/searchbar' %>
+
 <!-- Page Content goes here -->
 <% @suggestions.each do |suggestion| %>
 <div class="row suggestion">
@@ -35,7 +37,7 @@
 				<%= suggestion.description %>
 			</span>
 			</div class="sugg-photo-div">
-				<%= image_tag (suggestion.photo_url), :class => "responsive-image sugg-photo" %>
+				<%= image_tag (suggestion.photo_url), :class => "responsive-image sugg-photo materialboxed" %>
 			</div>
 		</p>				
 	</div>

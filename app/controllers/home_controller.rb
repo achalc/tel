@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 	def login 
 		@disable_nav = true
 		@disable_header = true
+		@disable_searchbar = true
 	end
 
 	def favorite
@@ -33,4 +34,11 @@ class HomeController < ApplicationController
 			redirect_to :index
 		end
 	end
+
+	def search
+	    @query = params[:query]
+	    @users = User.search(@query)
+	    @total_hits = @users.size
+	end
+
 end

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   root 'home#login'
 
   get 'index', to: 'home#index', as: 'index'
+  get 'home/search', to: 'home#search', as: 'search'
 
   post 'favorite_suggestion', to: 'home#favorite', as: 'favorite_suggestion'
   post 'unfavorite_suggestion', to: 'home#unfavorite', as: 'unfavorite_suggestion'
