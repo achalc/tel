@@ -41,4 +41,8 @@ class HomeController < ApplicationController
 	    @total_hits = @users.size
 	end
 
+	rescue_from ActiveRecord::RecordNotFound do
+		redirect_to(signout_path)
+	end
+
 end
