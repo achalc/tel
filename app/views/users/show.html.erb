@@ -41,7 +41,7 @@
 	</div>
 	<div "col s8">
 		<p class="suggestionInfo">
-			<strong><%= @user.name + "." %></strong> went to <strong><%= suggestion.location %></strong> and had 
+			<strong><%= @user.name %></strong> went to <strong><%= suggestion.location %></strong> and had 
 			<% if suggestion.experience_type == "positive" %>
 				a <strong><span class="positive"> <%= suggestion.experience_type %></span></strong>
 			<% elsif suggestion.experience_type == "okay" %>

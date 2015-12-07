@@ -26,8 +26,12 @@
       <div class="input-field col s12">
       <%= f.text_area :description, :class => "materialize-textarea" %>
       <%= f.label "Tell us more about your experience!" %>
-    </div>
-    </div>    
+      </div>
+    </div>  
+    <div class="input-field col s12">
+      <%= select_tag :told_ids, options_from_collection_for_select(@friends, :id, :name), multiple: true %>
+      <%= f.label "Tel Your Friends" %>
+      </div>  
     <div class="file-field input-field col s12">
       <div class="btn">
         <span>File</span>
@@ -38,7 +42,6 @@
       </div>
     </div>
     <div class="actions col s12 submitButton">
-      <br><br>
         <%= f.submit class: "btn waves-effect waves-light fave"%>
     </div>
   <% end %>
