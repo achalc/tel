@@ -14,10 +14,6 @@
       <%= f.text_field :location %>
       <%= f.label :location %>
     </div>
-    <div class="input-field col s12">
-      <%= f.text_area :description, :class => "materialize-textarea" %>
-      <%= f.label :description %>
-    </div>
     <div class="row_1">
       <div class="input-field col s6">
         <%= f.select :experience_type, :collection => Suggestion::EXPERIENCE_TYPES, :prompt => "What was your experience like?" %>
@@ -27,6 +23,10 @@
         <%= f.select :category, :collection => Suggestion::CATEGORIES_LIST, :prompt => "Select a category..." %>
         <%= f.label :category %> 
       </div>
+      <div class="input-field col s12">
+      <%= f.text_area :description, :class => "materialize-textarea" %>
+      <%= f.label "Tell us more about your experience!" %>
+    </div>
     </div>    
     <div class="file-field input-field col s12">
       <div class="btn">
