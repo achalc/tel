@@ -13,15 +13,9 @@
     <div "col s8">
       <div class= "content hideContent">
         <p class="suggestionInfo">
-          <strong><%= notification.description %>.</strong> <strong><%#= notification.suggestion.location %></strong>
+          <strong><%= notification.description %></strong> <strong><%#= notification.suggestion.location %></strong>
 
           <%#= image_tag (notification.suggestion.photo_url), :class => "responsive-image sugg-photo materialboxed" %>
-          <% if !notification.description.include? " is now your friend!" %>
-            <div id= "notificationButtons">
-              <a class="waves-effect waves-light btn gray"><i class="material-icons left">done</i>Got it!</a>
-              <a class="waves-effect waves-light btn fave"><i class="material-icons left">grade</i>Add to Favorites</a>
-            </div>
-          <% end %>
         </p>  
       </div>
     </div>

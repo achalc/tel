@@ -11,12 +11,12 @@
 		<%= image_tag (@user.profile_picture), :class => "circle responsive-image profile-pic" %><br>
 		<strong><%= @suggestions.count %> suggestions </strong> <br>
 		<% if @user.id == session[:user_id] %>
-			<strong><%= 'You have ' + @user.count_friends.to_s + ' friends'%></strong>
+			<strong><%= 'You have ' + @user.count_friends.to_s + ' followers'%></strong>
 		<% elsif !Friend.are_friends(session[:user_id], @user.id) %>
-			<strong><%= button_to 'Add Friend', friend_user_path(user_id_2: @user.id), class: 'waves-effect waves-light btn fave'%></strong>
+			<strong><%= button_to 'Follow', friend_user_path(user_id_2: @user.id), class: 'waves-effect waves-light btn fave'%></strong>
 		<% else %>
-			<strong><%= 'You and ' + @user.name + ' are friends' %></strong>
-			<strong><%= button_to 'Unfriend', unfriend_user_path(user_id_2: @user.id), class: 'waves-effect waves-light btn fave'%></strong>
+			<strong><%= @user.name + ' is following you' %></strong>
+			<strong><%= button_to 'Unfollow', unfriend_user_path(user_id_2: @user.id), class: 'waves-effect waves-light btn fave'%></strong>
 		<% end %>
 		</p>
 	</div>
