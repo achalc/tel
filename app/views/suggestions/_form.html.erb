@@ -29,7 +29,7 @@
       </div>
     </div>  
     <div class="input-field col s12">
-      <%= select_tag :told_ids, options_from_collection_for_select(@friends, :id, :name), multiple: true %>
+      <%= select_tag :told_ids, options_from_collection_for_select(@friends, :id, :name), multiple: true, include_blank: true %>
       <%= f.label "Tel Your Friends" %>
       </div>  
     <div class="file-field input-field col s12">
