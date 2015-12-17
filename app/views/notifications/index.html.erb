@@ -4,34 +4,29 @@
 <p id="notice"><%= notice %></p>
 
 <% @notifications.each do |notification| %>
-<div class="row suggestion">
-  <div class="col s2">
-    <%= image_tag (User.find(notification.notifier_id).profile_picture), :class => "circle responsive-image sugg-user" %>
-    <br>
-    <br>
-  </div>
-  <div "col s8">
-    <div class= "content hideContent">
-      <p class="suggestionInfo">
-        <strong><%= notification.description %></strong> <strong><%#= notification.suggestion.location %></strong>
-
-        <%#= image_tag (notification.suggestion.photo_url), :class => "responsive-image sugg-photo materialboxed" %>
-        <% if !notification.description.include? " is now your friend!" %>
-          <div id= "notificationButtons">
-            <a class="waves-effect waves-light btn gray"><i class="material-icons left">done</i>Got it!</a>
-            <a class="waves-effect waves-light btn fave"><i class="material-icons left">grade</i>Add to Favorites</a>
-          </div>
-        <% end %>
-      </p>  
+  <div class="row suggestion">
+    <div class="col s2">
+      <%= link_to image_tag(User.find(notification.notifier_id).profile_picture, :class => "circle responsive-image sugg-user"), user_path(notification.notifier_id) %>
+      <br>
+      <br>
     </div>
-    <% if !notification.description.include? " is now your friend!" %>
-      <div class="show-more">
-        <a class="linktext" href="#">Show more</a>
+    <div "col s8">
+      <div class= "content hideContent">
+        <p class="suggestionInfo">
+          <strong><%= notification.description %>.</strong> <strong><%#= notification.suggestion.location %></strong>
+
+          <%#= image_tag (notification.suggestion.photo_url), :class => "responsive-image sugg-photo materialboxed" %>
+          <% if !notification.description.include? " is now your friend!" %>
+            <div id= "notificationButtons">
+              <a class="waves-effect waves-light btn gray"><i class="material-icons left">done</i>Got it!</a>
+              <a class="waves-effect waves-light btn fave"><i class="material-icons left">grade</i>Add to Favorites</a>
+            </div>
+          <% end %>
+        </p>  
       </div>
-    <% end %>
+    </div>
+    <div class="col s2"></div>
+    <hr>
   </div>
-  <div class="col s2"></div>
-  <hr>
-</div>
 <% end %>
 

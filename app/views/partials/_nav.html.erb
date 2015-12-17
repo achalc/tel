@@ -13,7 +13,7 @@
 	<% end %>
 	<%= link_to notifications_path, :class => "nav-item" do %>
 		<i class="material-icons md-36" id= "<%= content_for :active_class2 %>">notifications_none</i>
-		<span class="item-label" id= "<%= content_for :active_class2 %>">Notification</span>
+		<span class="item-label" id= "<%= content_for :active_class2 %>">Notifications</span>
 	<% end %>
 	<%= link_to User.find(session[:user_id]), :class => "nav-item" do %>
 		<i class="material-icons md-36" id= "<%= content_for :active_class3 %>">perm_identity</i>
